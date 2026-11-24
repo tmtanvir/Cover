@@ -17,6 +17,8 @@ input,select{width:100%;padding:10px;margin-top:4px;border:1px solid #ddd;border
 input::placeholder{color:#999}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .btn{width:100%;padding:13px;border:0;border-radius:10px;background:#0f7a55;color:#fff;font-size:16px;font-weight:800;margin-top:14px;cursor:pointer}
+.check{display:flex;gap:8px;align-items:center;background:#fff8e1;border:1px dashed #e6a800;padding:10px;border-radius:8px;margin-top:12px}
+.check input{width:20px;height:20px}
 .design-mini{margin-top:14px}
 .design-mini h3{margin:0 0 6px;font-size:13px}
 .designs{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
@@ -38,6 +40,7 @@ input::placeholder{color:#999}
 .subject{font-size:15pt;font-weight:700;margin-top:3mm}
 .subject i{font-style:italic}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:0;width:100%;margin-top:10mm;text-align:left}
+.two.single{grid-template-columns:1fr}
 .box{padding:0 3mm}
 .box h3{margin:0 0 2mm;font-size:11pt;font-weight:800;text-align:center;padding:1.5mm 0}
 .box p{margin:0;font-size:11pt;line-height:1.6;font-weight:600;word-wrap:break-word}
@@ -77,7 +80,7 @@ input::placeholder{color:#999}
 .diag-bottom p{margin:0;font-size:11pt;line-height:1.6}
 .regLine{display:none}
 .d1{background:#eaf6fb;border:1px solid #c9a227;box-shadow:inset 0 0 0 3mm #fff,inset 0 0 0 3.5mm #c9a227}.d1 .college,.d1 .dept{color:#1a4fa0}.d1 .subject{color:#1a4fa0}.d1 .assign{background:#1a9e4a;color:#fff;padding:2mm 10mm;border-radius:8mm;font-size:18pt;margin-top:6mm}.d1 .box.by h3{background:#a8c8f0}.d1 .box.to h3{background:#3bb54a;color:#fff}
-.d2{background:#e8ece0;border:5mm solid #6d7f62}.d2 .college,.d2 .dept,.d2 .subject{color:#2f4630}.d2 .assign{color:#3d6b3d;border-top:2px solid #6d7f62;border-bottom:2px solid #6d7f62;padding:2mm 0;margin-top:6mm}.d2 .two{grid-template-columns:1fr;gap:4mm}.d2 .box{border:1px solid #6d7f62;padding:3mm 4mm;background:#f5f6f0}.d2 .box.by h3{background:#a8b89a}.d2 .box.to h3{background:#6d7f62;color:#fff}
+.d2{background:#e8ece0;border:5mm solid #6d7f62}.d2 .college,.d2 .dept,.d2 .subject{color:#2f4630}.d2 .assign{color:#3d6b3d;border-top:2px solid #6d7f62;border-bottom:2px solid #6d7f62;padding:2mm 0;margin-top:6mm}.d2 .two{grid-template-columns:1fr;gap:4mm}.d2 .two.single{grid-template-columns:1fr}.d2 .box{border:1px solid #6d7f62;padding:3mm 4mm;background:#f5f6f0}.d2 .box.by h3{background:#a8b89a}.d2 .box.to h3{background:#6d7f62;color:#fff}
 .d3{background:#fffbe8;border:1px solid #c9a227}.d3 .college,.d3 .dept,.d3 .subject{color:#8a6d00}.d3 .assign{border:2px solid #c9a227;padding:2mm 8mm;margin-top:6mm;color:#8a6d00}.d3 .line{height:3px;background:#c9a227}.d3 .box.by h3{background:#f7e8a0}.d3 .box.to h3{background:#e6d27a}
 .d4{background:#fff;border:3mm solid #5b2ee5;border-radius:8mm}.d4 .college{color:#5b2ee5}.d4 .dept,.d4 .subject{color:#2b2b9e}.d4 .assign{background:#5b2ee5;color:#fff;padding:2mm 10mm;border-radius:10mm;font-size:18pt;margin-top:6mm}.d4 .box{border:1.5px solid #b8a0ff;border-radius:4mm;padding:3mm}.d4 .box.by h3{background:#d8ccff;border-radius:3mm}.d4 .box.to h3{background:#b8a0ff;border-radius:3mm}
 .d5{background:#fff;border:1px solid #0090d6}.d5 .college{color:#004a7a}.d5 .dept,.d5 .subject{color:#004a7a}.d5 .assign{color:#0090d6;border-left:6px solid #0090d6;padding-left:4mm;text-align:left;width:100%;margin-top:6mm}.d5 .box.by h3{background:#0090d6;color:#fff}.d5 .box.to h3{background:#004a7a;color:#fff}.d5 .bg-shape{left:0;right:0;bottom:0;height:35mm;background:#0090d6;clip-path:polygon(0 25%,100% 0,100% 100%,0 100%)}
@@ -130,7 +133,6 @@ input::placeholder{color:#999}
 <h3>SUBMITTED BY - শিক্ষার্থী</h3>
 <label>Your Name <span>(উদাহরণ দিয়ে দেখানো হবে, চাপ দিলে মুছে যাবে)</span></label><input id="fName" placeholder="Ex: TM">
 <div class="row2"><div><label>ID / ROLL NO</label><input id="fRoll" placeholder="Ex: 1762"></div><div><label>Semester / SESSION</label><input id="fSession" placeholder="Ex: 2025-2026"></div></div>
-<!-- ✅ Registration No - Optional -->
 <label>Registration No <span>(ঐচ্ছিক - না দিলে কভারে দেখা যাবে না)</span></label><input id="fReg" placeholder="Ex: 1234567890">
 <label>CLASS <span>(অনার্স / ইন্টার - যেটি প্রয়োজন নির্বাচন করুন অথবা লিখুন)</span></label>
 <input id="fClass" list="classList" placeholder="Ex: B.A. (HONOURS) / HSC">
@@ -147,7 +149,9 @@ input::placeholder{color:#999}
 <option value="Degree (Pass)"></option>
 <option value="Masters"></option>
 </datalist>
-<h3>SUBMITTED TO - শিক্ষক</h3>
+<h3>SUBMITTED TO - শিক্ষক (ঐচ্ছিক)</h3>
+<label class="check"><input type="checkbox" id="showTeacher"> Submitted To দেখাতে চাই? (টিচার থাকলে টিক দাও, না থাকলে টিক দিও না - টিক না দিলে কভারে কোনো ফাঁকা / আবছা জায়গা থাকবে না)</label>
+<div id="teacherInputs">
 <label>Teacher Name <span>(খালি রাখুন - চাপ দিয়ে লিখুন)</span></label><input id="fTeacher" placeholder="Ex: শিক্ষকের নাম লিখুন">
 <label>Teacher Designation / পদবি <span>(চাপ দিলেই পরিবর্তন হবে, মুছে ফেলতে হবে না - দিলে নামের পাশে () বন্ধনীতে দেখা যাবে)</span></label>
 <select id="fDesig">
@@ -162,6 +166,7 @@ input::placeholder{color:#999}
 <option value="__custom__">✏️ নিজে লিখুন (Custom)</option>
 </select>
 <input id="fDesigCustom" placeholder="Ex: নিজের পদবি লিখুন" style="display:none">
+</div>
 <label>Submission Date <span>(না দিলে কভারে __/__/____ থাকবে)</span></label><input id="fDate" type="date">
 <div class="design-mini">
 <h3>🎨 ডিজাইন পরিবর্তন করুন - তথ্য একই থাকবে</h3>
@@ -193,9 +198,9 @@ input::placeholder{color:#999}
 <div class="line"></div>
 <div class="assign">ASSIGNMENT</div>
 <div class="subject">SUBJECT:- <i class="oSubject ex">Ex: Introduction to Islamic Dawah</i></div>
-<div class="two">
+<div class="two single" id="classicTwo">
 <div class="box by"><h3>SUBMITTED BY:-</h3><p><span class="oName ex">Ex: TM</span><br>ROLL NO: <span class="oRoll ex">Ex: 1762</span><br><span class="regLine">REG NO: <span class="oReg">1234567890</span><br></span>SESSION: <span class="oSession ex">Ex: 2025-2026</span><br>CLASS: <span class="oClass ex">Ex: B.A. (HONOURS)</span></p></div>
-<div class="box to"><h3>SUBMITTED TO :</h3><p><span class="oTeacherFull ex">Ex: শিক্ষকের নাম লিখুন</span><br><span class="oTDept">Department of English Language And Literature</span><br>Noakhali Government College</p></div>
+<div class="box to" id="classicTo" style="display:none"><h3>SUBMITTED TO :</h3><p><span class="oTeacherFull"></span><br><span class="oTDept">Department of English Language And Literature</span><br>Noakhali Government College</p></div>
 </div>
 <div class="date">Date of Submission:- <span class="oDate">__/__/____</span></div>
 <div class="sign-area"><div class="sign">Signature</div><div></div></div>
@@ -207,7 +212,7 @@ input::placeholder{color:#999}
 <div class="seu-pill">Assignment On <span class="oSubject ex">Ex: Introduction to Islamic Dawah</span></div>
 <div class="seu-two">
 <div class="seu-box"><h3>Submitted By</h3><p>Name: <span class="oName ex">Ex: TM</span><br>ID: <span class="oRoll ex">Ex: 1762</span><br><span class="regLine">Reg No: <span class="oReg">1234567890</span><br></span>Semester: <span class="oSession ex">Ex: 2025-2026</span><br>Dept. of <span class="oDeptShort">English Language And Literature</span><br>Class: <span class="oClass ex">Ex: B.A. (HONOURS)</span></p></div>
-<div class="seu-box to"><h3>Submitted To</h3><p>Name: <span class="oTeacherFull ex">Ex: শিক্ষকের নাম লিখুন</span><br>Dept. of <span class="oDeptShort">English Language And Literature</span></p></div>
+<div class="seu-box to" id="seuTo" style="display:none"><h3>Submitted To</h3><p>Name: <span class="oTeacherFull"></span><br>Dept. of <span class="oDeptShort">English Language And Literature</span></p></div>
 </div>
 <div class="seu-bottom">Submitted on <span class="oDate">__/__/____</span></div>
 <div style="width:100%;display:flex;justify-content:space-between;margin-top:6mm;font-size:10pt"><span>Date :- __/__/____</span><span style="border-top:1px solid #000;min-width:30mm">Signature</span></div>
@@ -217,7 +222,7 @@ input::placeholder{color:#999}
 <div class="seu2-head"><div class="logo logoAll" style="margin:0 auto"><img class="logoImg"></div><div class="college oCollege">NOAKHALI GOVERNMENT COLLEGE</div><div class="address">Maijdee, Noakhali-3800</div></div>
 <div class="seu2-pill">Assignment On <span class="oSubject ex">Ex: Introduction to Islamic Dawah</span></div>
 <div class="seu2-box"><h3>Submitted By</h3><p>Name: <span class="oName ex">Ex: TM</span> &nbsp; | &nbsp; ID: <span class="oRoll ex">Ex: 1762</span> &nbsp; | &nbsp; Semester: <span class="oSession ex">Ex: 2025-2026</span><span class="regLine"> &nbsp; | &nbsp; Reg No: <span class="oReg">1234567890</span></span><br>Dept. of <span class="oDeptShort">English Language And Literature</span> &nbsp; | &nbsp; Class: <span class="oClass ex">Ex: B.A. (HONOURS)</span></p></div>
-<div class="seu2-box"><h3>Submitted To</h3><p>Name: <span class="oTeacherFull ex">Ex: শিক্ষকের নাম লিখুন</span> &nbsp; | &nbsp; Dept. of <span class="oDeptShort">English Language And Literature</span></p></div>
+<div class="seu2-box" id="seu2To" style="display:none"><h3>Submitted To</h3><p>Name: <span class="oTeacherFull"></span> &nbsp; | &nbsp; Dept. of <span class="oDeptShort">English Language And Literature</span></p></div>
 <div class="seu2-bottom">Submitted on <span class="oDate">__/__/____</span></div>
 <div style="width:92%;display:flex;justify-content:space-between;margin:0 auto 5mm;font-size:10pt"><span>Date :- __/__/____</span><span style="border-top:1px solid #000;min-width:30mm">Signature</span></div>
 <div class="brand">Made by <b>T💙M . MD Tanvirul Islam Rabbi</b></div>
@@ -253,28 +258,37 @@ bindEx('fName','oName','Ex: TM');
 bindEx('fRoll','oRoll','Ex: 1762');
 bindEx('fSession','oSession','Ex: 2025-2026');
 bindEx('fClass','oClass','Ex: B.A. (HONOURS)');
-bindEx('fTeacher','oTeacher','Ex: শিক্ষকের নাম লিখুন');
-/* ✅ Registration No - Optional, না দিলে লাইন লুকানো থাকবে */
-$('fReg').addEventListener('input',e=>{
-  const v=e.target.value.trim();
-  setAll('oReg',v,false);
-  document.querySelectorAll('.regLine').forEach(el=>{ el.style.display=v?'inline':'none'; });
-});
+/* ✅ SUBMITTED TO - OPTIONAL: টিক + নাম ২টাই থাকলে তবেই দেখাবে, না হলে পুরা বক্স + ফাঁকা জায়গা লুকিয়ে যাবে */
+function updateTeacherVisibility(){
+  const show = $('showTeacher').checked && $('fTeacher').value.trim() !== '';
+  $('classicTo').style.display = show ? 'block' : 'none';
+  $('seuTo').style.display = show ? 'block' : 'none';
+  $('seu2To').style.display = show ? 'block' : 'none';
+  $('classicTwo').classList.toggle('single', !show);
+  $('teacherInputs').style.display = $('showTeacher').checked ? 'block' : 'none';
+}
+$('showTeacher').addEventListener('change', updateTeacherVisibility);
 function getDept(){ if($('fDept').value=='__custom__') return $('fDeptCustom').value.trim(); return $('fDept').value; }
 function updateDept(){ const v=getDept(); if(!v) return; setAll('oDept',v.toUpperCase(),false); setAll('oTDept',v,false); setAll('oDeptShort',v.replace(/^Department of /i,''),false); }
 $('fDept').addEventListener('change',e=>{ $('fDeptCustom').style.display=(e.target.value=='__custom__')?'block':'none'; if(e.target.value!='__custom__') updateDept(); });
 $('fDeptCustom').addEventListener('input',updateDept);
 function getDesig(){ if($('fDesig').value=='__custom__') return $('fDesigCustom').value.trim(); return $('fDesig').value.trim(); }
-function updateTeacherFull(){ const name=$('fTeacher').value.trim(); const desig=getDesig(); let txt=''; let isEx=false; if(!name){ txt='Ex: শিক্ষকের নাম লিখুন'; isEx=true; } else if(desig){ txt=name+' ('+desig+')'; } else{ txt=name; } setAll('oTeacherFull',txt,isEx); }
+function updateTeacherFull(){ const name=$('fTeacher').value.trim(); const desig=getDesig(); let txt=''; if(!name){ txt=''; } else if(desig){ txt=name+' ('+desig+')'; } else{ txt=name; } setAll('oTeacherFull',txt,false); updateTeacherVisibility(); }
 $('fTeacher').addEventListener('input',updateTeacherFull);
 $('fDesig').addEventListener('change',e=>{ $('fDesigCustom').style.display=(e.target.value=='__custom__')?'block':'none'; updateTeacherFull(); });
 $('fDesigCustom').addEventListener('input',updateTeacherFull);
+$('fReg').addEventListener('input',e=>{
+  const v=e.target.value.trim();
+  setAll('oReg',v,false);
+  document.querySelectorAll('.regLine').forEach(el=>{ el.style.display=v?'inline':'none'; });
+});
 $('fDate').addEventListener('change',e=>{
   if(!e.target.value){ setAll('oDate','__/__/____',false); return; }
   const parts=e.target.value.split('-');
   setAll('oDate',parts[2]+'/'+parts[1]+'/'+parts[0],false);
 });
 $('logoInput').addEventListener('change',e=>{ const f=e.target.files[0]; if(!f) return; const r=new FileReader(); r.onload=ev=>{ document.querySelectorAll('.logoImg').forEach(im=>im.src=ev.target.result); document.querySelectorAll('.logoAll').forEach(l=>l.style.display='block'); }; r.readAsDataURL(f); });
+updateTeacherVisibility();
 </script>
 </body>
-</html>
+                                                                             </html>
