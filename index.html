@@ -150,9 +150,7 @@ input::placeholder{color:#999}
 <option value="Masters"></option>
 </datalist>
 <h3>SUBMITTED TO - শিক্ষক (ঐচ্ছিক)</h3>
-<label class="check"><input type="checkbox" id="showTeacher"> Submitted To দেখাতে চাই? (টিচার থাকলে টিক দাও, না থাকলে টিক দিও না - টিক না দিলে কভারে কোনো ফাঁকা / আবছা জায়গা থাকবে না)</label>
-<div id="teacherInputs">
-<label>Teacher Name <span>(খালি রাখুন - চাপ দিয়ে লিখুন)</span></label><input id="fTeacher" placeholder="Ex: শিক্ষকের নাম লিখুন">
+<label>Teacher Name <span>(নাম লিখলেই কভারে আসবে, না লিখলে কভারে আসবে না)</span></label><input id="fTeacher" placeholder="Ex: শিক্ষকের নাম লিখুন">
 <label>Teacher Designation / পদবি <span>(চাপ দিলেই পরিবর্তন হবে, মুছে ফেলতে হবে না - দিলে নামের পাশে () বন্ধনীতে দেখা যাবে)</span></label>
 <select id="fDesig">
 <option value="">— পদবি দিতে চাই না —</option>
@@ -166,7 +164,6 @@ input::placeholder{color:#999}
 <option value="__custom__">✏️ নিজে লিখুন (Custom)</option>
 </select>
 <input id="fDesigCustom" placeholder="Ex: নিজের পদবি লিখুন" style="display:none">
-</div>
 <label>Submission Date <span>(না দিলে কভারে __/__/____ থাকবে)</span></label><input id="fDate" type="date">
 <div class="design-mini">
 <h3>🎨 ডিজাইন পরিবর্তন করুন - তথ্য একই থাকবে</h3>
@@ -258,16 +255,14 @@ bindEx('fName','oName','Ex: TM');
 bindEx('fRoll','oRoll','Ex: 1762');
 bindEx('fSession','oSession','Ex: 2025-2026');
 bindEx('fClass','oClass','Ex: B.A. (HONOURS)');
-/* ✅ SUBMITTED TO - OPTIONAL: টিক + নাম ২টাই থাকলে তবেই দেখাবে, না হলে পুরা বক্স + ফাঁকা জায়গা লুকিয়ে যাবে */
+/* ✅ SUBMITTED TO - Nam likhle asbe, na likhle asbe na - Tick lagbe na */
 function updateTeacherVisibility(){
-  const show = $('showTeacher').checked && $('fTeacher').value.trim() !== '';
+  const show = $('fTeacher').value.trim() !== '';
   $('classicTo').style.display = show ? 'block' : 'none';
   $('seuTo').style.display = show ? 'block' : 'none';
   $('seu2To').style.display = show ? 'block' : 'none';
   $('classicTwo').classList.toggle('single', !show);
-  $('teacherInputs').style.display = $('showTeacher').checked ? 'block' : 'none';
 }
-$('showTeacher').addEventListener('change', updateTeacherVisibility);
 function getDept(){ if($('fDept').value=='__custom__') return $('fDeptCustom').value.trim(); return $('fDept').value; }
 function updateDept(){ const v=getDept(); if(!v) return; setAll('oDept',v.toUpperCase(),false); setAll('oTDept',v,false); setAll('oDeptShort',v.replace(/^Department of /i,''),false); }
 $('fDept').addEventListener('change',e=>{ $('fDeptCustom').style.display=(e.target.value=='__custom__')?'block':'none'; if(e.target.value!='__custom__') updateDept(); });
@@ -291,4 +286,4 @@ $('logoInput').addEventListener('change',e=>{ const f=e.target.files[0]; if(!f) 
 updateTeacherVisibility();
 </script>
 </body>
-                    </html>
+  </html>
