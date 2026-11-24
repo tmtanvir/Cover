@@ -24,12 +24,18 @@ input::placeholder{color:#999}
 .designs{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
 .designs button{padding:8px 2px;border:1px solid #ddd;border-radius:7px;cursor:pointer;font-weight:700;background:#fff;font-family:'Times New Roman','TonnySushreeMJ',serif;font-size:11px}
 .designs button.active{border-color:#0f7a55;background:#e8f5ee}
+.colors{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.colors button{flex:1;min-width:70px;padding:9px 4px;border:1px solid #ddd;border-radius:8px;cursor:pointer;font-weight:800;background:#fff;font-size:12px}
+.colors button.active{border-color:#0f3d2e;background:#e8f5ee}
 .cover{width:210mm;height:297mm;margin:20px auto;background:#fff;position:relative;overflow:hidden;flex-shrink:0;font-family:'Times New Roman','TonnySushreeMJ',serif}
-.cover-inner,.seu-inner,.seu2-inner,.diag-inner{width:100%;height:100%;display:none;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:2}
+.cover-inner,.seu-inner,.seu2-inner,.diag-inner,.photo-inner{width:100%;height:100%;display:none;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:2}
 .cover.mode-classic .cover-inner{display:flex;padding:12mm 13mm 10mm}
 .cover.mode-seu .seu-inner{display:flex;padding:10mm 12mm 10mm}
 .cover.mode-seu2 .seu2-inner{display:flex;padding:0}
 .cover.mode-diag .diag-inner{display:flex;padding:0}
+.cover.mode-photo .photo-inner{display:flex;padding:10mm 14mm 10mm}
+.bismillahBox{font-size:10pt;color:#b08a3c;text-align:center;line-height:1.3}
+.bismillahBox small{display:block;font-size:7.5pt;color:#888;margin-top:1mm}
 .logo{display:none;width:26mm;height:26mm;margin-bottom:2mm}
 .logo img{width:100%;height:100%;object-fit:contain}
 .college{font-size:20pt;font-weight:900;line-height:1.1}
@@ -49,7 +55,9 @@ input::placeholder{color:#999}
 .sign-area{width:100%;display:flex;justify-content:space-between;margin-top:auto;padding-top:8mm}
 .sign{font-size:10pt;font-style:italic;border-top:1px solid #000;padding-top:1mm;min-width:38mm;text-align:center}
 .bottom-line{width:100%;height:2mm;background:#000;margin-top:2mm}
-.brand{width:100%;text-align:center;font-size:9pt;color:#888;margin-top:2mm}.brand b{color:#0f3d2e}
+.brand{display:none}
+.credit{position:absolute;bottom:2mm;left:5mm;font-size:7pt;color:#888;z-index:10;text-align:left}
+.credit b{color:#0f3d2e}
 .corner{position:absolute;z-index:1;font-size:42pt;line-height:1;pointer-events:none}
 .c-tl{top:0;left:0}.c-tr{top:0;right:0}.c-bl{bottom:0;left:0}.c-br{bottom:0;right:0}
 .bg-shape{position:absolute;z-index:0;pointer-events:none}
@@ -79,6 +87,20 @@ input::placeholder{color:#999}
 .diag-bottom{width:100%;margin-top:auto;background:#0090d6;color:#000;padding:8mm 12mm 12mm;text-align:right;clip-path:polygon(0 25%,100% 0,100% 100%,0 100%)}
 .diag-bottom p{margin:0;font-size:11pt;line-height:1.6}
 .regLine{display:none}
+.photo-border{position:absolute;inset:4mm;border:1.5px solid #2e6b57;pointer-events:none;z-index:1}
+.photo-border:before{content:'';position:absolute;inset:1.5mm;border:1px solid #2e6b57}
+.photo-college{font-size:19pt;font-weight:900;color:#2e6b57;margin-top:3mm;line-height:1.1}
+.photo-dept{width:78%;background:#2e6b57;color:#fff;font-weight:800;padding:3mm;margin-top:5mm;font-size:11pt}
+.photo-assign{font-size:22pt;font-weight:900;color:#c9a227;margin-top:8mm;letter-spacing:1px}
+.photo-subject{width:78%;border:1px solid #c9a227;border-left:3px solid #c9a227;padding:3mm;margin-top:4mm;font-size:13pt;font-weight:700;color:#2e6b57}
+.photo-table{width:78%;border:1.5px solid #2e6b57;margin-top:10mm;text-align:left;background:#fff}
+.photo-table h3{background:#2e6b57;color:#fff;text-align:center;margin:0;padding:2mm;font-size:11pt}
+.photo-table table{width:100%;border-collapse:collapse;font-size:11.5pt}
+.photo-table td{padding:1.8mm 3mm}
+.photo-table td:first-child{width:28%;font-weight:700}
+.photo-bottom{width:78%;display:flex;justify-content:space-between;margin-top:14mm;font-size:10pt;text-align:left}
+.photo-bottom .d{border-top:1px solid #000;padding-top:1mm}
+.photo-bottom .s{border-top:1px solid #000;padding-top:1mm;text-align:center}
 .d1{background:#eaf6fb;border:1px solid #c9a227;box-shadow:inset 0 0 0 3mm #fff,inset 0 0 0 3.5mm #c9a227}.d1 .college,.d1 .dept{color:#1a4fa0}.d1 .subject{color:#1a4fa0}.d1 .assign{background:#1a9e4a;color:#fff;padding:2mm 10mm;border-radius:8mm;font-size:18pt;margin-top:6mm}.d1 .box.by h3{background:#a8c8f0}.d1 .box.to h3{background:#3bb54a;color:#fff}
 .d2{background:#e8ece0;border:5mm solid #6d7f62}.d2 .college,.d2 .dept,.d2 .subject{color:#2f4630}.d2 .assign{color:#3d6b3d;border-top:2px solid #6d7f62;border-bottom:2px solid #6d7f62;padding:2mm 0;margin-top:6mm}.d2 .two{grid-template-columns:1fr;gap:4mm}.d2 .two.single{grid-template-columns:1fr}.d2 .box{border:1px solid #6d7f62;padding:3mm 4mm;background:#f5f6f0}.d2 .box.by h3{background:#a8b89a}.d2 .box.to h3{background:#6d7f62;color:#fff}
 .d3{background:#fffbe8;border:1px solid #c9a227}.d3 .college,.d3 .dept,.d3 .subject{color:#8a6d00}.d3 .assign{border:2px solid #c9a227;padding:2mm 8mm;margin-top:6mm;color:#8a6d00}.d3 .line{height:3px;background:#c9a227}.d3 .box.by h3{background:#f7e8a0}.d3 .box.to h3{background:#e6d27a}
@@ -90,6 +112,14 @@ input::placeholder{color:#999}
 .d9{background:#fff;border:1.5mm solid #2b2b9e}.d9 .seu-pill,.d9 .seu-bottom{background:#2b2b9e}
 .d10{background:#fff;border:1px solid #0b5e8a}
 .d11{background:#fff;border:1.5mm solid #2b2b9e}
+.d12{background:#fff}
+.cover[data-theme="bw"]{filter:grayscale(1)}
+.cover[data-theme="pink"]{filter:hue-rotate(300deg) saturate(1.3)}
+.cover[data-theme="red"]{filter:hue-rotate(-50deg) saturate(1.4)}
+.cover[data-theme="black"]{filter:grayscale(1) contrast(1.2) brightness(.9)}
+.cover[data-theme="purple"]{filter:hue-rotate(220deg) saturate(1.2)}
+.cover[data-theme="orange"]{filter:hue-rotate(30deg) saturate(1.4)}
+.cover[data-theme="green"]{filter:none}
 @page{size:A4;margin:0}
 @media print{body{background:#fff;padding:0}.form{display:none!important}.cover{margin:0;width:210mm;height:297mm;print-color-adjust:exact;-webkit-print-color-adjust:exact}}
 @media(max-width:600px){.cover{transform:scale(.92);transform-origin:top center}.designs{grid-template-columns:repeat(2,1fr)}}
@@ -100,8 +130,9 @@ input::placeholder{color:#999}
 <h1>NOAKHALI GOVERNMENT COLLEGE - A4 Cover</h1>
 <p>তথ্য একবার লিখলেই সকল ডিজাইনে দেখা যাবে</p>
 <label>College Logo <span>(লোগো না দিলে কোনো চিহ্ন থাকবে না)</span></label><input type="file" id="logoInput" accept="image/*">
+<label class="check"><input type="checkbox" id="showBismillah" checked> 🕌 Bismillah দেখাতে চাই? (টিক দিলে সব ডিজাইনে উপরে আসবে, না দিলে আসবে না)</label>
 <label>College Name <span>(নির্ধারিত - প্রয়োজনে পরিবর্তন করা যাবে)</span></label><input id="fCollege" value="Noakhali Government College">
-<label>Department <span>(চাপ দিলেই পরিবর্তন হবে, মুছে ফেলতে হবে না - তালিকায় না থাকলে নিজে লিখুন নির্বাচন করুন)</span></label>
+<label>Department <span>(চাপ দিলেই পরিবর্তন হবে)</span></label>
 <select id="fDept">
 <option>Department of English Language And Literature</option>
 <option>Department of Islamic Studies</option>
@@ -131,27 +162,29 @@ input::placeholder{color:#999}
 <input id="fDeptCustom" placeholder="Ex: নিজের Department লিখুন" style="display:none">
 <label>Assignment On / Subject</label><input id="fSubject" placeholder="Ex: Introduction to Islamic Dawah">
 <h3>SUBMITTED BY - শিক্ষার্থী</h3>
-<label>Your Name <span>(উদাহরণ দিয়ে দেখানো হবে, চাপ দিলে মুছে যাবে)</span></label><input id="fName" placeholder="Ex: TM">
-<div class="row2"><div><label>ID / ROLL NO</label><input id="fRoll" placeholder="Ex: 1762"></div><div><label>Semester / SESSION</label><input id="fSession" placeholder="Ex: 2025-2026"></div></div>
+<label>Your Name</label><input id="fName" placeholder="Ex: TM">
+<div class="row2"><div><label>ROLL NO</label><input id="fRoll" placeholder="Ex: 1762"></div><div><label>SESSION</label><input id="fSession" placeholder="Ex: 25-26"></div></div>
 <label>Registration No <span>(ঐচ্ছিক - না দিলে কভারে দেখা যাবে না)</span></label><input id="fReg" placeholder="Ex: 1234567890">
-<label>CLASS <span>(অনার্স / ইন্টার - যেটি প্রয়োজন নির্বাচন করুন অথবা লিখুন)</span></label>
-<input id="fClass" list="classList" placeholder="Ex: B.A. (HONOURS) / HSC">
-<datalist id="classList">
-<option value="B.A. (HONOURS)"></option>
-<option value="B.Sc. (HONOURS)"></option>
-<option value="B.B.S. (HONOURS)"></option>
-<option value="B.S.S. (HONOURS)"></option>
-<option value="HSC"></option>
-<option value="Class XI"></option>
-<option value="Class XII"></option>
-<option value="Inter 1st Year"></option>
-<option value="Inter 2nd Year"></option>
-<option value="Degree (Pass)"></option>
-<option value="Masters"></option>
-</datalist>
+<label>CLASS <span>(চাপ দিলেই আসবে)</span></label>
+<select id="fClass">
+<option>B.A. (HONOURS)</option>
+<option>B.Sc. (HONOURS)</option>
+<option>B.B.S. (HONOURS)</option>
+<option>B.S.S. (HONOURS)</option>
+<option>HSC</option>
+<option>Class XI</option>
+<option>Class XII</option>
+<option>Inter 1st Year</option>
+<option>Inter 2nd Year</option>
+<option>Degree (Pass)</option>
+<option>Masters</option>
+<option value="__custom__">✏️ নিজে লিখুন (Custom)</option>
+</select>
+<input id="fClassCustom" placeholder="Ex: নিজের Class লিখুন" style="display:none">
 <h3>SUBMITTED TO - শিক্ষক (ঐচ্ছিক)</h3>
-<label>Teacher Name <span>(নাম লিখলেই কভারে আসবে, না লিখলে কভারে আসবে না)</span></label><input id="fTeacher" placeholder="Ex: শিক্ষকের নাম লিখুন">
-<label>Teacher Designation / পদবি <span>(চাপ দিলেই পরিবর্তন হবে, মুছে ফেলতে হবে না - দিলে নামের পাশে () বন্ধনীতে দেখা যাবে)</span></label>
+<p style="text-align:left;margin:2px 0;color:#0f7a55;font-size:13px">👉 নাম লিখলেই কভারে আসবে, না লিখলে আসবে না - টিক দিতে হবে না</p>
+<label>Teacher Name</label><input id="fTeacher" placeholder="Ex: শিক্ষকের নাম লিখুন">
+<label>Teacher Designation / পদবি</label>
 <select id="fDesig">
 <option value="">— পদবি দিতে চাই না —</option>
 <option>LECTURER</option>
@@ -179,15 +212,27 @@ input::placeholder{color:#999}
 <button onclick="setDesign(9,this)">9. 🔵 SEU Small</button>
 <button onclick="setDesign(10,this)">10. 📐 Blue Ribbon</button>
 <button onclick="setDesign(11,this)">11. 🎓 SEU Big Pill</button>
+<button onclick="setDesign(12,this)">12. 🕌 CR Photo Style</button>
+</div>
+<h3 style="margin-top:10px">🎨 কালার - প্রতিটি ডিজাইনের জন্য</h3>
+<div class="colors">
+<button class="active" onclick="setTheme('green',this)">💚 সবুজ-নীল</button>
+<button onclick="setTheme('bw',this)">⚫ সাদা-কালো</button>
+<button onclick="setTheme('pink',this)">🩷 গোলাপি</button>
+<button onclick="setTheme('red',this)">❤️ লাল</button>
+<button onclick="setTheme('black',this)">⬛ কালো</button>
+<button onclick="setTheme('purple',this)">💜 বেগুনি</button>
+<button onclick="setTheme('orange',this)">🧡 কমলা</button>
 </div>
 </div>
 <button class="btn" onclick="window.print()">🖨️ Print / Save as PDF - A4</button>
 </div>
 
-<div class="cover d1 mode-classic" id="cover">
+<div class="cover d1 mode-classic" id="cover" data-theme="green">
 <div class="bg-shape"></div>
 <span class="corner c-tl" id="ct1">🌿</span><span class="corner c-tr" id="ct2">🌿</span><span class="corner c-bl" id="cb1">🌿</span><span class="corner c-br" id="cb2">🌿</span>
 <div class="cover-inner">
+<div class="bismillahBox">بسم الله الرحمن الرحيم<small>In the Name of Allah, the Most Gracious, the Most Merciful</small></div>
 <div class="logo logoAll"><img class="logoImg"></div>
 <div class="college oCollege">Noakhali Government College</div>
 <div class="address">Maijdee, Noakhali-3800</div>
@@ -196,50 +241,66 @@ input::placeholder{color:#999}
 <div class="assign">ASSIGNMENT</div>
 <div class="subject">SUBJECT:- <i class="oSubject ex">Ex: Introduction to Islamic Dawah</i></div>
 <div class="two single" id="classicTwo">
-<div class="box by"><h3>SUBMITTED BY:-</h3><p><span class="oName ex">Ex: TM</span><br>ROLL NO: <span class="oRoll ex">Ex: 1762</span><br><span class="regLine">REG NO: <span class="oReg">1234567890</span><br></span>SESSION: <span class="oSession ex">Ex: 2025-2026</span><br>CLASS: <span class="oClass ex">Ex: B.A. (HONOURS)</span></p></div>
+<div class="box by"><h3>SUBMITTED BY:-</h3><p><span class="oName ex">Ex: TM</span><br>ROLL NO: <span class="oRoll ex">Ex: 1762</span><br><span class="regLine">REG NO: <span class="oReg">1234567890</span><br></span>SESSION: <span class="oSession ex">Ex: 25-26</span><br>CLASS: <span class="oClass ex">Ex: B.A. (HONOURS)</span><br>COLLEGE: <span class="oCollege">Noakhali Government College</span></p></div>
 <div class="box to" id="classicTo" style="display:none"><h3>SUBMITTED TO :</h3><p><span class="oTeacherFull"></span><br><span class="oTDept">Department of English Language And Literature</span><br>Noakhali Government College</p></div>
 </div>
 <div class="date">Date of Submission:- <span class="oDate">__/__/____</span></div>
 <div class="sign-area"><div class="sign">Signature</div><div></div></div>
 <div class="bottom-line"></div>
-<div class="brand">Made by <b>T💙M . MD Tanvirul Islam Rabbi</b></div>
 </div>
 <div class="seu-inner">
+<div class="bismillahBox">بسم الله الرحمن الرحيم<small>In the Name of Allah, the Most Gracious, the Most Merciful</small></div>
 <div class="seu-top"><div class="logo logoAll"><img class="logoImg"></div><div><div class="seu-college oCollege">NOAKHALI GOVERNMENT COLLEGE</div><div class="address">Maijdee, Noakhali-3800</div></div></div>
 <div class="seu-pill">Assignment On <span class="oSubject ex">Ex: Introduction to Islamic Dawah</span></div>
 <div class="seu-two">
-<div class="seu-box"><h3>Submitted By</h3><p>Name: <span class="oName ex">Ex: TM</span><br>ID: <span class="oRoll ex">Ex: 1762</span><br><span class="regLine">Reg No: <span class="oReg">1234567890</span><br></span>Semester: <span class="oSession ex">Ex: 2025-2026</span><br>Dept. of <span class="oDeptShort">English Language And Literature</span><br>Class: <span class="oClass ex">Ex: B.A. (HONOURS)</span></p></div>
+<div class="seu-box"><h3>Submitted By</h3><p>Name: <span class="oName ex">Ex: TM</span><br>Roll: <span class="oRoll ex">Ex: 1762</span><br><span class="regLine">Reg No: <span class="oReg">1234567890</span><br></span>Session: <span class="oSession ex">Ex: 25-26</span><br>Dept. of <span class="oDeptShort">English Language And Literature</span><br>Class: <span class="oClass ex">Ex: B.A. (HONOURS)</span><br>College: <span class="oCollege">Noakhali Government College</span></p></div>
 <div class="seu-box to" id="seuTo" style="display:none"><h3>Submitted To</h3><p>Name: <span class="oTeacherFull"></span><br>Dept. of <span class="oDeptShort">English Language And Literature</span></p></div>
 </div>
 <div class="seu-bottom">Submitted on <span class="oDate">__/__/____</span></div>
 <div style="width:100%;display:flex;justify-content:space-between;margin-top:6mm;font-size:10pt"><span>Date :- __/__/____</span><span style="border-top:1px solid #000;min-width:30mm">Signature</span></div>
-<div class="brand">Made by <b>T💙M . MD Tanvirul Islam Rabbi</b></div>
 </div>
 <div class="seu2-inner">
+<div class="bismillahBox" style="margin:3mm 0">بسم الله الرحمن الرحيم<small>In the Name of Allah, the Most Gracious, the Most Merciful</small></div>
 <div class="seu2-head"><div class="logo logoAll" style="margin:0 auto"><img class="logoImg"></div><div class="college oCollege">NOAKHALI GOVERNMENT COLLEGE</div><div class="address">Maijdee, Noakhali-3800</div></div>
 <div class="seu2-pill">Assignment On <span class="oSubject ex">Ex: Introduction to Islamic Dawah</span></div>
-<div class="seu2-box"><h3>Submitted By</h3><p>Name: <span class="oName ex">Ex: TM</span> &nbsp; | &nbsp; ID: <span class="oRoll ex">Ex: 1762</span> &nbsp; | &nbsp; Semester: <span class="oSession ex">Ex: 2025-2026</span><span class="regLine"> &nbsp; | &nbsp; Reg No: <span class="oReg">1234567890</span></span><br>Dept. of <span class="oDeptShort">English Language And Literature</span> &nbsp; | &nbsp; Class: <span class="oClass ex">Ex: B.A. (HONOURS)</span></p></div>
+<div class="seu2-box"><h3>Submitted By</h3><p>Name: <span class="oName ex">Ex: TM</span> &nbsp; | &nbsp; Roll: <span class="oRoll ex">Ex: 1762</span> &nbsp; | &nbsp; Session: <span class="oSession ex">Ex: 25-26</span><span class="regLine"> &nbsp; | &nbsp; Reg No: <span class="oReg">1234567890</span></span><br>Dept. of <span class="oDeptShort">English Language And Literature</span> &nbsp; | &nbsp; Class: <span class="oClass ex">Ex: B.A. (HONOURS)</span><br>College: <span class="oCollege">Noakhali Government College</span></p></div>
 <div class="seu2-box" id="seu2To" style="display:none"><h3>Submitted To</h3><p>Name: <span class="oTeacherFull"></span> &nbsp; | &nbsp; Dept. of <span class="oDeptShort">English Language And Literature</span></p></div>
 <div class="seu2-bottom">Submitted on <span class="oDate">__/__/____</span></div>
 <div style="width:92%;display:flex;justify-content:space-between;margin:0 auto 5mm;font-size:10pt"><span>Date :- __/__/____</span><span style="border-top:1px solid #000;min-width:30mm">Signature</span></div>
-<div class="brand">Made by <b>T💙M . MD Tanvirul Islam Rabbi</b></div>
 </div>
 <div class="diag-inner">
+<div class="bismillahBox" style="margin-top:3mm">بسم الله الرحمن الرحيم<small>In the Name of Allah, the Most Gracious, the Most Merciful</small></div>
 <div class="diag-ribbon"><span class="oCollege">Noakhali Government College</span></div>
-<div class="diag-mid"><div class="diag-title"><span>University</span>Assignment Title</div><div class="diag-year">Year <span class="oSession ex">Ex: 2025-2026</span></div><div class="diag-line"></div><div style="font-size:11pt">Major: <span class="oSubject ex">Ex: Introduction to Islamic Dawah</span></div></div>
-<div class="diag-bottom"><p>Academic Year: <span class="oSession ex">Ex: 2025-2026</span><br>Department Name: <span class="oTDept">Department of English Language And Literature</span><br>Student Name: <span class="oName ex">Ex: TM</span> | Enrollment No. <span class="oRoll ex">Ex: 1762</span><span class="regLine"> | Reg No. <span class="oReg">1234567890</span></span><br>Subject/Course Name: <span class="oSubject ex">Ex: Introduction to Islamic Dawah</span><br>Date of Submission: <span class="oDate">__/__/____</span></p></div>
+<div class="diag-mid"><div class="diag-title"><span>University</span>Assignment Title</div><div class="diag-year">Year <span class="oSession ex">Ex: 25-26</span></div><div class="diag-line"></div><div style="font-size:11pt">Major: <span class="oSubject ex">Ex: Introduction to Islamic Dawah</span></div></div>
+<div class="diag-bottom"><p>Academic Year: <span class="oSession ex">Ex: 25-26</span><br>Department Name: <span class="oTDept">Department of English Language And Literature</span><br>Student Name: <span class="oName ex">Ex: TM</span> | Roll No. <span class="oRoll ex">Ex: 1762</span><span class="regLine"> | Reg No. <span class="oReg">1234567890</span></span><br>Class: <span class="oClass ex">Ex: B.A. (HONOURS)</span> | College: <span class="oCollege">Noakhali Government College</span><br>Subject/Course Name: <span class="oSubject ex">Ex: Introduction to Islamic Dawah</span><br>Date of Submission: <span class="oDate">__/__/____</span></p></div>
 </div>
+<div class="photo-inner">
+<div class="photo-border"></div>
+<div class="bismillahBox">بسم الله الرحمن الرحيم<small>In the Name of Allah, the Most Gracious, the Most Merciful</small></div>
+<div class="logo logoAll" style="margin-top:3mm"><img class="logoImg"></div>
+<div class="photo-college oCollege">NOAKHALI GOVERNMENT COLLEGE</div>
+<div class="photo-dept oDept">DEPARTMENT OF ENGLISH LANGUAGE AND LITERATURE</div>
+<div class="photo-assign">ASSIGNMENT</div>
+<div class="photo-subject">Subject: <span class="oSubject ex">Ex: Introduction to Islamic Dawah</span></div>
+<div class="photo-table"><h3>SUBMITTED BY</h3><table><tr><td>Name</td><td>: <span class="oName ex">Ex: TM</span></td></tr><tr><td>Roll</td><td>: <span class="oRoll ex">Ex: 1762</span></td></tr><tr><td>Session</td><td>: <span class="oSession ex">Ex: 25-26</span></td></tr><tr><td>Class</td><td>: <span class="oClass ex">Ex: B.A. (HONOURS)</span></td></tr><tr><td>College</td><td>: <span class="oCollege">Noakhali Government College</span></td></tr><tr class="regLine"><td>Reg No</td><td>: <span class="oReg">1234567890</span></td></tr></table></div>
+<div class="photo-table" id="photoTo" style="display:none;margin-top:4mm"><h3>SUBMITTED TO</h3><table><tr><td>Name</td><td>: <span class="oTeacherFull"></span></td></tr><tr><td>Dept.</td><td>: <span class="oTDept">Department of English Language And Literature</span></td></tr></table></div>
+<div class="photo-bottom"><div><div class="d"><span class="oDate">__/__/____</span></div><div style="margin-top:1mm">Date of Submission</div></div><div><div class="s">Signature of Teacher</div></div></div>
+</div>
+<div class="credit">Design By:- <b>T💙M . MD Tanvirul Islam Rabbi</b></div>
 </div>
 
 <script>
 const $=id=>document.getElementById(id);
-const corners={1:['🌿','🌿','🌿','🌿'],2:['🍃','🍃','🍃','🍃'],3:['✨','✨','✨','✨'],4:['🌸','','🌸','🌸'],5:['','','',''],6:['','','',''],7:['🌸','🌸','🌸','🌸'],8:['✨','✨','✨','✨'],9:['','','',''],10:['','','',''],11:['','','','']};
+let curTheme='green';
+const corners={1:['🌿','🌿','🌿','🌿'],2:['🍃','🍃','🍃','🍃'],3:['✨','✨','✨','✨'],4:['🌸','','🌸','🌸'],5:['','','',''],6:['','','',''],7:['🌸','🌸','🌸','🌸'],8:['✨','✨','✨','✨'],9:['','','',''],10:['','','',''],11:['','','',''],12:['','','','']};
 function setDesign(n,btn){
-  let mode='mode-classic'; if(n==9) mode='mode-seu'; if(n==11) mode='mode-seu2'; if(n==10) mode='mode-diag';
+  let mode='mode-classic'; if(n==9) mode='mode-seu'; if(n==11) mode='mode-seu2'; if(n==10) mode='mode-diag'; if(n==12) mode='mode-photo';
   $('cover').className='cover d'+n+' '+mode;
+  $('cover').setAttribute('data-theme',curTheme);
   document.querySelectorAll('.designs button').forEach(b=>b.classList.remove('active')); btn.classList.add('active');
   const c=corners[n]; $('ct1').textContent=c[0]; $('ct2').textContent=c[1]; $('cb1').textContent=c[2]; $('cb2').textContent=c[3];
 }
+function setTheme(t,btn){ curTheme=t; $('cover').setAttribute('data-theme',t); document.querySelectorAll('.colors button').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
 function setAll(cls,txt,isEx){ document.querySelectorAll('.'+cls).forEach(el=>{ el.textContent=txt; el.classList.toggle('ex',!!isEx); }); }
 function bindEx(inputId,cls,exText,formatter){
   $(inputId).addEventListener('input',e=>{
@@ -253,20 +314,25 @@ bindEx('fCollege','oCollege','Noakhali Government College',v=>v.toUpperCase());
 bindEx('fSubject','oSubject','Ex: Introduction to Islamic Dawah');
 bindEx('fName','oName','Ex: TM');
 bindEx('fRoll','oRoll','Ex: 1762');
-bindEx('fSession','oSession','Ex: 2025-2026');
-bindEx('fClass','oClass','Ex: B.A. (HONOURS)');
-/* ✅ SUBMITTED TO - Nam likhle asbe, na likhle asbe na - Tick lagbe na */
+bindEx('fSession','oSession','Ex: 25-26');
 function updateTeacherVisibility(){
   const show = $('fTeacher').value.trim() !== '';
   $('classicTo').style.display = show ? 'block' : 'none';
   $('seuTo').style.display = show ? 'block' : 'none';
   $('seu2To').style.display = show ? 'block' : 'none';
+  $('photoTo').style.display = show ? 'block' : 'none';
   $('classicTwo').classList.toggle('single', !show);
 }
+function updateBismillah(){ document.querySelectorAll('.bismillahBox').forEach(el=>{ el.style.display = $('showBismillah').checked ? 'block' : 'none'; }); }
+$('showBismillah').addEventListener('change',updateBismillah);
 function getDept(){ if($('fDept').value=='__custom__') return $('fDeptCustom').value.trim(); return $('fDept').value; }
 function updateDept(){ const v=getDept(); if(!v) return; setAll('oDept',v.toUpperCase(),false); setAll('oTDept',v,false); setAll('oDeptShort',v.replace(/^Department of /i,''),false); }
 $('fDept').addEventListener('change',e=>{ $('fDeptCustom').style.display=(e.target.value=='__custom__')?'block':'none'; if(e.target.value!='__custom__') updateDept(); });
 $('fDeptCustom').addEventListener('input',updateDept);
+function getClass(){ if($('fClass').value=='__custom__') return $('fClassCustom').value.trim(); return $('fClass').value; }
+function updateClass(){ const v=getClass(); if(!v){ setAll('oClass','Ex: B.A. (HONOURS)',true); return; } setAll('oClass',v,false); }
+$('fClass').addEventListener('change',e=>{ $('fClassCustom').style.display=(e.target.value=='__custom__')?'block':'none'; if(e.target.value!='__custom__') updateClass(); });
+$('fClassCustom').addEventListener('input',updateClass);
 function getDesig(){ if($('fDesig').value=='__custom__') return $('fDesigCustom').value.trim(); return $('fDesig').value.trim(); }
 function updateTeacherFull(){ const name=$('fTeacher').value.trim(); const desig=getDesig(); let txt=''; if(!name){ txt=''; } else if(desig){ txt=name+' ('+desig+')'; } else{ txt=name; } setAll('oTeacherFull',txt,false); updateTeacherVisibility(); }
 $('fTeacher').addEventListener('input',updateTeacherFull);
@@ -275,15 +341,15 @@ $('fDesigCustom').addEventListener('input',updateTeacherFull);
 $('fReg').addEventListener('input',e=>{
   const v=e.target.value.trim();
   setAll('oReg',v,false);
-  document.querySelectorAll('.regLine').forEach(el=>{ el.style.display=v?'inline':'none'; });
+  document.querySelectorAll('.regLine').forEach(el=>{ el.style.display=v?'table-row':'none'; });
 });
 $('fDate').addEventListener('change',e=>{
   if(!e.target.value){ setAll('oDate','__/__/____',false); return; }
   const parts=e.target.value.split('-');
-  setAll('oDate',parts[2]+'/'+parts[1]+'/'+parts[0],false);
+  setAll('oDate',parts[2]+'-'+parts[1]+'-'+parts[0],false);
 });
 $('logoInput').addEventListener('change',e=>{ const f=e.target.files[0]; if(!f) return; const r=new FileReader(); r.onload=ev=>{ document.querySelectorAll('.logoImg').forEach(im=>im.src=ev.target.result); document.querySelectorAll('.logoAll').forEach(l=>l.style.display='block'); }; r.readAsDataURL(f); });
-updateTeacherVisibility();
+updateTeacherVisibility(); updateClass(); updateBismillah();
 </script>
 </body>
-  </html>
+                                </html>
